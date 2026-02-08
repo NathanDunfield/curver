@@ -32,12 +32,12 @@ class Options:
         self.arrow_shape = (12, 15, 5)
         
         # Set it so that self.update() will be called whenever these variables are changed.
-        self.show_internals_var.trace('w', self.update)
-        self.show_orientations_var.trace('w', self.update)
-        self.straight_laminations_var.trace('w', self.update)
-        self.smooth_var.trace('w', self.update)
-        self.label_edges_var.trace('w', self.update)
-        self.size_var.trace('w', self.update)
+        self.show_internals_var.trace_add('write', self.update)
+        self.show_orientations_var.trace_add('write', self.update)
+        self.straight_laminations_var.trace_add('write', self.update)
+        self.smooth_var.trace_add('write', self.update)
+        self.label_edges_var.trace_add('write', self.update)
+        self.size_var.trace_add('write', self.update)
         
         # Drawing parameters.
         self.epsilon = 10
